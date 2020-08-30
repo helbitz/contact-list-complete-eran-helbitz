@@ -14,7 +14,7 @@ export default function ContactFormPage({ match }) {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3030/contacts/${_id}`,
+            `https://backend-contactlist.herokuapp.com/contacts/${_id}`,
           );
           dispatch({
             type: 'FETCH_CONTACT',
