@@ -10,7 +10,7 @@ export default function ContactListPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3030/contacts');
+        const response = await axios.get('https://backend-contactlist.herokuapp.com/contacts');
         dispatch({
           type: 'FETCH_CONTACTS',
           payload: response.data.data || response.data, // in case pagination is disabled
