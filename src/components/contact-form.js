@@ -30,7 +30,7 @@ export default function ContactForm({ contact }) {
   const updateContact = async data => {
     try {
       const response = await axios.patch(
-        `http://localhost:3030/contacts/${contact._id}`,
+        `https://backend-contactlist.herokuapp.com/contacts/${contact._id}`,
         data,
       );
       dispatch({
