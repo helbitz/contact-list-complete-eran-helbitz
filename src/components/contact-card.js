@@ -14,7 +14,7 @@ export default function ContactCard({ contact }) {
   const deleteContact = async id => {
     try {
       const response = await axios.delete(
-        `http://localhost:3030/contacts/${id}`,
+        `https://backend-contactlist.herokuapp.com/contacts/${id}`,
       );
       dispatch({
         type: 'DELETE_CONTACT',

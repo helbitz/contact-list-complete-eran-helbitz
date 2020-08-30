@@ -16,7 +16,7 @@ export default function ContactForm({ contact }) {
 
   const createContact = async data => {
     try {
-      const response = await axios.post('http://localhost:3030/contacts', data);
+      const response = await axios.post('https://backend-contactlist.herokuapp.com/contacts/', data);
       dispatch({
         type: 'CREATE_CONTACT',
         payload: response.data,
