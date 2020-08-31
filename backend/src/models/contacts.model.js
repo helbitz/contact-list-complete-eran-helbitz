@@ -1,10 +1,4 @@
-// contacts-model.js - A mongoose model
-//
-// See http://mongoosejs.com/docs/models.html
-
 const { model } = require('mongoose');
-
-// for more of what you can do here.
 require('mongoose-type-email');
 
 module.exports = function(app) {
@@ -14,19 +8,10 @@ module.exports = function(app) {
   const schema = new Schema(
     {
       name: {
-        first: {
-          type: String,
-          required: [true, 'First Name is required'],
-        },
-        last: {
-          type: String,
-          required: false,
-        },
+        first: { type: String, required: [true, 'First Name is required'], },
+        last: {type: String, required: false,},
       },
-      email: {
-        type: mongooseClient.SchemaTypes.Email,
-        required: [true, 'Email is required'],
-      },
+      email: {type: mongooseClient.SchemaTypes.Email, required: [true, 'Email is required'],},
       phone: {
         type: String,
         required: [true, 'Phone is required'],
@@ -36,15 +21,9 @@ module.exports = function(app) {
           },
           message: '{VALUE} is not a valid international phone number!',
         },
-      },
-    },
-    {
-      timestamps: true,
-    },
+      }},
+    {timestamps: true,},
   );
-
-  // This is necessary to avoid model compilation errors in watch mode
-  // see https://mongoosejs.com/docs/api/connection.html#connection_Connection-deleteModel
   if (mongooseClient.modelNames().includes(modelName)) {
     mongooseClient.deleteModel(modelName);
   }

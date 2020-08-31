@@ -1,16 +1,5 @@
 {
-  "name": "backend",
-  "description": "API server",
-  "version": "0.0.0",
-  "homepage": "",
-  "main": "src",
-  "keywords": [
-    "feathers"
-  ],
-  "author": {
-    "name": "Michael Wanyoike",
-    "email": "micwanyoike@gmail.com"
-  },
+  
   "contributors": [],
   "bugs": {},
   "directories": {
